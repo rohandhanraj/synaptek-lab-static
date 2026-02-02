@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Synaptek Lab</title>
+    <meta name="description" content="Get in touch with Synaptek Lab. We'd love to hear from you.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00d4ff;
+            --secondary: #0066cc;
+            --accent: #ff00ff;
+            --dark: #0a0e27;
+            --darker: #050814;
+            --light: #e0f4ff;
+            --gradient: linear-gradient(135deg, #0066cc 0%, #00d4ff 50%, #ff00ff 100%);
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .circuit-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.05;
+            background-image: 
+                linear-gradient(90deg, var(--primary) 1px, transparent 1px),
+                linear-gradient(0deg, var(--primary) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: slideCircuit 20s linear infinite;
+        }
+
+        @keyframes slideCircuit {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: rgba(10, 14, 39, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hero-small {
+            padding: 4rem 5%;
+            text-align: center;
+            background: rgba(10, 14, 39, 0.5);
+        }
+
+        .hero-small h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+        }
+
+        .hero-small p {
+            font-size: 1.3rem;
+            color: var(--light);
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            background: rgba(0, 102, 204, 0.1);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 2px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .contact-info h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .info-item {
+            margin-bottom: 2rem;
+        }
+
+        .info-item h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-item p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .info-item a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .info-item a:hover {
+            color: var(--primary);
+        }
+
+        .contact-form {
+            background: rgba(0, 102, 204, 0.1);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 2px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .contact-form h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(5, 8, 20, 0.8);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 10px;
+            color: var(--light);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.5);
+        }
+
+        footer {
+            padding: 3rem 5%;
+            background: var(--darker);
+            border-top: 2px solid var(--primary);
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: rgba(224, 244, 255, 0.6);
+        }
+
+        @media (max-width: 968px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero-small h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .contact-info h2,
+            .contact-form h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="circuit-bg"></div>
+
+    <nav>
+        <div class="logo">Synaptek Lab</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="agent-studio.html">Agent Studio</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero-small">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you</p>
+    </section>
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>Get In Touch</h2>
+            
+            <div class="info-item">
+                <h3>📧 Email</h3>
+                <p><a href="mailto:info@synapteklab.org">info@synapteklab.org</a></p>
+                <p><a href="mailto:support@synapteklab.org">support@synapteklab.org</a></p>
+            </div>
+
+            <div class="info-item">
+                <h3>🌐 Website</h3>
+                <p><a href="https://rohandhanraj.github.io" target="_blank">rohandhanraj.github.io</a></p>
+            </div>
+
+            <div class="info-item">
+                <h3>💬 Community</h3>
+                <p>Join our community forums and discussions to connect with other learners and stay updated on the latest AI developments.</p>
+            </div>
+
+            <div class="info-item">
+                <h3>🕒 Response Time</h3>
+                <p>We typically respond to inquiries within 24-48 hours. For urgent matters, please mark your message as urgent.</p>
+            </div>
+
+            <div class="info-item">
+                <h3>📍 Location</h3>
+                <p>We operate as a fully remote, non-profit organization serving learners worldwide.</p>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h2>Send a Message</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required placeholder="What is your message about?">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="Tell us more about your inquiry..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+            <a href="data-deletion.html">Data Deletion</a>
+        </div>
+        <p class="copyright">&copy; 2026 Synaptek Lab. All rights reserved. A non-profit initiative for free AI education.</p>
+    </footer>
+</body>
+</html>

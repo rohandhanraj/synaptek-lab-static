@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synaptek Lab - Powering Your Future with Intelligence</title>
+    <meta name="description" content="Free knowledge on AI, ML, MLOps, Gen AI, and Agentic AI. Build and test agents in our Agent Studio.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00d4ff;
+            --secondary: #0066cc;
+            --accent: #ff00ff;
+            --dark: #0a0e27;
+            --darker: #050814;
+            --light: #e0f4ff;
+            --gradient: linear-gradient(135deg, #0066cc 0%, #00d4ff 50%, #ff00ff 100%);
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .circuit-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.05;
+            background-image: 
+                linear-gradient(90deg, var(--primary) 1px, transparent 1px),
+                linear-gradient(0deg, var(--primary) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: slideCircuit 20s linear infinite;
+        }
+
+        @keyframes slideCircuit {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: rgba(10, 14, 39, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.8s ease;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.15) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.2); opacity: 0.6; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+            animation: fadeInUp 1s ease 0.4s backwards;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            font-weight: 400;
+            animation: fadeInUp 1s ease 0.6s backwards;
+        }
+
+        .tagline {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            font-style: italic;
+            animation: fadeInUp 1s ease 0.8s backwards;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: var(--gradient);
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 50px;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            letter-spacing: 1px;
+            animation: fadeInUp 1s ease 1s backwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.5);
+        }
+
+        .features {
+            padding: 6rem 5%;
+            background: rgba(10, 14, 39, 0.5);
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: var(--gradient);
+            border-radius: 20px;
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: -1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3);
+        }
+
+        .feature-card:hover::before {
+            opacity: 0.2;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--light);
+        }
+
+        .tech-list {
+            padding: 6rem 5%;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tech-tag {
+            padding: 1rem 2rem;
+            background: rgba(0, 212, 255, 0.1);
+            border: 2px solid var(--primary);
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            animation: fadeIn 0.6s ease backwards;
+        }
+
+        .tech-tag:nth-child(1) { animation-delay: 0.1s; }
+        .tech-tag:nth-child(2) { animation-delay: 0.2s; }
+        .tech-tag:nth-child(3) { animation-delay: 0.3s; }
+        .tech-tag:nth-child(4) { animation-delay: 0.4s; }
+        .tech-tag:nth-child(5) { animation-delay: 0.5s; }
+        .tech-tag:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .tech-tag:hover {
+            background: var(--primary);
+            color: var(--darker);
+            transform: scale(1.1);
+        }
+
+        footer {
+            padding: 3rem 5%;
+            background: var(--darker);
+            border-top: 2px solid var(--primary);
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: rgba(224, 244, 255, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .tagline {
+                font-size: 1.3rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="circuit-bg"></div>
+
+    <nav>
+        <div class="logo">Synaptek Lab</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="agent-studio.html">Agent Studio</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>SYNAPTEK LAB</h1>
+            <p class="tagline">Powering Your Future with Intelligence</p>
+            <p>Free knowledge on trending AI technologies</p>
+            <a href="agent-studio.html" class="cta-button">Launch Agent Studio</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2 class="section-title">What We Offer</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <span class="feature-icon">🧠</span>
+                <h3>Free Knowledge</h3>
+                <p>Access comprehensive tutorials and resources on AI, ML, and cutting-edge technologies. Learn at your own pace with expertly curated content.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🤖</span>
+                <h3>Agent Studio</h3>
+                <p>Build, test, and deploy AI agents in our interactive playground. Experiment with agentic AI technologies and bring your ideas to life.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🚀</span>
+                <h3>Trending Tech</h3>
+                <p>Stay ahead with tutorials on the latest technologies including MLOps, Gen AI, and emerging AI frameworks and tools.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🌐</span>
+                <h3>Community Driven</h3>
+                <p>Join a community of learners and innovators. Share knowledge, collaborate on projects, and grow together in the AI revolution.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-list">
+        <h2 class="section-title">Technologies We Cover</h2>
+        <div class="tech-tags">
+            <div class="tech-tag">Artificial Intelligence</div>
+            <div class="tech-tag">Machine Learning</div>
+            <div class="tech-tag">MLOps</div>
+            <div class="tech-tag">Generative AI</div>
+            <div class="tech-tag">Agentic AI</div>
+            <div class="tech-tag">Deep Learning</div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+            <a href="data-deletion.html">Data Deletion</a>
+        </div>
+        <p class="copyright">&copy; 2026 Synaptek Lab. All rights reserved. A non-profit initiative for free AI education.</p>
+    </footer>
+</body>
+</html>

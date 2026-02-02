@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Synaptek Lab</title>
+    <meta name="description" content="Synaptek Lab's Privacy Policy - Learn how we protect your data and privacy.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00d4ff;
+            --secondary: #0066cc;
+            --accent: #ff00ff;
+            --dark: #0a0e27;
+            --darker: #050814;
+            --light: #e0f4ff;
+            --gradient: linear-gradient(135deg, #0066cc 0%, #00d4ff 50%, #ff00ff 100%);
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .circuit-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.05;
+            background-image: 
+                linear-gradient(90deg, var(--primary) 1px, transparent 1px),
+                linear-gradient(0deg, var(--primary) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: slideCircuit 20s linear infinite;
+        }
+
+        @keyframes slideCircuit {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: rgba(10, 14, 39, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hero-small {
+            padding: 4rem 5%;
+            text-align: center;
+            background: rgba(10, 14, 39, 0.5);
+        }
+
+        .hero-small h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .last-updated {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+
+        .policy-section {
+            background: rgba(0, 102, 204, 0.1);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            margin-bottom: 2rem;
+        }
+
+        .policy-section h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .policy-section h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .policy-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .policy-section ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .policy-section li {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        footer {
+            padding: 3rem 5%;
+            background: var(--darker);
+            border-top: 2px solid var(--primary);
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: rgba(224, 244, 255, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero-small h1 {
+                font-size: 2.5rem;
+            }
+
+            .policy-section {
+                padding: 1.5rem;
+            }
+
+            .policy-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="circuit-bg"></div>
+
+    <nav>
+        <div class="logo">Synaptek Lab</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="agent-studio.html">Agent Studio</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero-small">
+        <h1>Privacy Policy</h1>
+    </section>
+
+    <div class="content">
+        <p class="last-updated">Last Updated: February 2, 2026</p>
+
+        <div class="policy-section">
+            <h2>1. Introduction</h2>
+            <p>
+                Welcome to Synaptek Lab. We are committed to protecting your privacy and ensuring transparency about how we handle your data. As a <span class="highlight">non-profit educational initiative</span>, we prioritize your privacy and collect minimal information necessary to provide our services.
+            </p>
+            <p>
+                This Privacy Policy explains what information we collect, how we use it, and your rights regarding your personal data.
+            </p>
+        </div>
+
+        <div class="policy-section">
+            <h2>2. Information We Collect</h2>
+            
+            <h3>2.1 Information You Provide</h3>
+            <ul>
+                <li><strong>Contact Information:</strong> Name and email address when you contact us through our contact form</li>
+                <li><strong>Agent Studio Data:</strong> Code, configurations, and agent settings you create in our Agent Studio (stored locally in your browser)</li>
+                <li><strong>Feedback:</strong> Any feedback or suggestions you voluntarily provide</li>
+            </ul>
+
+            <h3>2.2 Automatically Collected Information</h3>
+            <ul>
+                <li><strong>Usage Data:</strong> Pages visited, time spent on pages, and navigation patterns</li>
+                <li><strong>Technical Data:</strong> Browser type, device information, IP address, and operating system</li>
+                <li><strong>Cookies:</strong> Essential cookies for website functionality (see Cookie Policy below)</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2>3. How We Use Your Information</h2>
+            <p>We use the collected information for the following purposes:</p>
+            <ul>
+                <li>To provide and improve our educational services</li>
+                <li>To respond to your inquiries and support requests</li>
+                <li>To analyze website usage and improve user experience</li>
+                <li>To maintain website security and prevent abuse</li>
+                <li>To send educational updates (only if you opt-in)</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2>4. Data Storage and Security</h2>
+            <p>
+                We implement appropriate technical and organizational measures to protect your personal data. Your Agent Studio work is primarily stored <span class="highlight">locally in your browser</span> and is not transmitted to our servers unless you explicitly choose to share it.
+            </p>
+            <p>
+                Any data we collect is stored securely and retained only for as long as necessary to fulfill the purposes outlined in this policy.
+            </p>
+        </div>
+
+        <div class="policy-section">
+            <h2>5. Data Sharing and Disclosure</h2>
+            <p>
+                As a non-profit educational organization, we <span class="highlight">do not sell, rent, or trade</span> your personal information. We may share your data only in the following circumstances:
+            </p>
+            <ul>
+                <li>With your explicit consent</li>
+                <li>To comply with legal obligations</li>
+                <li>To protect our rights and prevent fraud</li>
+                <li>With service providers who assist in operating our website (under strict confidentiality agreements)</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2>6. Your Rights</h2>
+            <p>You have the following rights regarding your personal data:</p>
+            <ul>
+                <li><strong>Access:</strong> Request a copy of the personal data we hold about you</li>
+                <li><strong>Correction:</strong> Request correction of inaccurate or incomplete data</li>
+                <li><strong>Deletion:</strong> Request deletion of your personal data (see our <a href="data-deletion.html" style="color: var(--primary);">Data Deletion Instructions</a>)</li>
+                <li><strong>Objection:</strong> Object to processing of your personal data</li>
+                <li><strong>Portability:</strong> Request transfer of your data to another service</li>
+            </ul>
+            <p>
+                To exercise these rights, please contact us at <a href="mailto:privacy@synapteklab.org" style="color: var(--primary);">privacy@synapteklab.org</a>
+            </p>
+        </div>
+
+        <div class="policy-section">
+            <h2>7. Cookies Policy</h2>
+            <p>
+                We use essential cookies to ensure proper website functionality. These cookies do not track your personal information and are necessary for features like remembering your preferences in the Agent Studio.
+            </p>
+            <p>
+                You can control cookies through your browser settings, though disabling them may affect website functionality.
+            </p>
+        </div>
+
+        <div class="policy-section">
+            <h2>8. Third-Party Links</h2>
+            <p>
+                Our website may contain links to external resources and tools. We are not responsible for the privacy practices of these third-party websites. We encourage you to review their privacy policies.
+            </p>
+        </div>
+
+        <div class="policy-section">
+            <h2>9. Children's Privacy</h2>
+            <p>
+                Our services are designed for general audiences. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us immediately.
+            </p>
+        </div>
+
+        <div class="policy-section">
+            <h2>10. Changes to This Policy</h2>
+            <p>
+                We may update this Privacy Policy periodically. Changes will be posted on this page with an updated "Last Updated" date. We encourage you to review this policy regularly.
+            </p>
+        </div>
+
+        <div class="policy-section">
+            <h2>11. Contact Us</h2>
+            <p>
+                If you have questions or concerns about this Privacy Policy or our data practices, please contact us:
+            </p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:privacy@synapteklab.org" style="color: var(--primary);">privacy@synapteklab.org</a></li>
+                <li><strong>Contact Form:</strong> <a href="contact.html" style="color: var(--primary);">Visit our Contact page</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+            <a href="data-deletion.html">Data Deletion</a>
+        </div>
+        <p class="copyright">&copy; 2026 Synaptek Lab. All rights reserved. A non-profit initiative for free AI education.</p>
+    </footer>
+</body>
+</html>
